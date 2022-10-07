@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<link>
+	<header>
+		
+		<DisplayName>Backup to Computer, 15 Sep 2022</DisplayName>
+	</header>
+	<parameters>
+		<param name="TaskID">3</param>
+		<param name="LastRunEvent">MANUAL_TASK_RUN</param>
+		<param name="LastRunError">0</param>
+		<param name="LastRunStart">0</param>
+		<param name="LastRunFinish">0</param>
+		<param name="LastLogFileName"></param>
+		<param name="TaskIsConfigured">yes</param>
+		<param name="TaskType">0</param>
+		<param name="TaskCreationDate">1663271955</param>
+		<param name="UsedForProtectionCalc">yes</param>
+		<param name="BackupExpirationThreshold">1</param>
+		<param name="BackupExpirationPeriod">0</param>
+		<param name="TaskPriority">2</param>
+		<param name="RunOnEvent"></param>
+		<param name="CurrentBackupVersion">0</param>
+		<param name="LastFullBackupVersion">0</param>
+		<param name="UseTimeStamps">no</param>
+		<param name="TimeStampFormat">[MonthString] [MonthDay], [Year] ([Hour].[Minute])</param>
+		<param name="CopyAclRights">no</param>
+		<param name="UseUsbTrigger">no</param>
+		<param name="IncrementVersionNumber">no</param>
+		<param name="MaxVersionsCount">0</param>
+		<param name="MaxStorageTime">0</param>
+		<param name="RotationCount">3</param>
+		<param name="BackupType">0</param>
+		<param name="CleanDestination">no</param>
+		<param name="TransformationFilters"></param>
+		<param name="DiffCondition">5</param>
+		<param name="CopyDirection">0</param>
+		<param name="DiffAttributesMask">5</param>
+		<param name="StopCondition">0</param>
+		<param name="ExcludedFileFilterAttributes">0</param>
+		<param name="ExcludedFileFilterMasks"></param>
+		<param name="ExcludedFileFilterCreationMin">-1</param>
+		<param name="ExcludedFileFilterCreationMax">0</param>
+		<param name="IncludedFileFilterAttributes">0</param>
+		<param name="IncludedFileFilterMasks">*.*</param>
+		<param name="IncludedFileFilterCreationMin">0</param>
+		<param name="IncludedFileFilterCreationMax">-1</param>
+		<param name="ExcludedDirectoryFilterMasks"></param>
+		<param name="IncludedDirectoryFilterMasks">*</param>
+		<param name="IsDeleteDestinationDirectory">no</param>
+		<param name="Sources">localhost\PostgreSQL\PostgreSQL Connection.hbl\postgres</param>
+		<param name="Aliases">postgres</param>
+		<param name="SourceSerials"></param>
+		<param name="TargetSerials"></param>
+		<param name="Targets">localhost\Computer\C$\Users\Администратор\Desktop\task\16_09_2022\Backup to Computer, 15 Sep 2022</param>
+		<param name="ScheduleType">0</param>
+		<param name="RunMissing">no</param>
+		<param name="ScheduleStart">0</param>
+		<param name="ScheduleDays">0</param>
+		<param name="SchedulePeriod">0</param>
+		<param name="Actions"></param>
+		<param name="ScheduleLastRunTime">0</param>
+		<param name="ScheduleNextRunTime">0</param>
+	</parameters>
+</link>

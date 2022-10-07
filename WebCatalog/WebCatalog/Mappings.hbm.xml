@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+	xmlns="urn:nhibernate-mapping-2.2"
+	namespace="WebCatalog.Models"
+	assembly="WebCatalog">
+	<class name="Customer" table="customers" lazy="false">
+		<id name="Id" column="id">
+			<generator class="guid"/>
+		</id>
+		<property name="Name">
+			<column name="name" not-null="true" />
+		</property>
+		<property name="Code">
+			<column name="code" not-null="true" />
+		</property>
+		<property name="Address">
+			<column name="address"/>
+		</property>
+		<property name="Discount">
+			<column name="discount" />
+		</property>
+	</class>
+	<class name="Item" table="items" lazy="false">
+		<id name="Id" column="id">
+			<generator class="guid"/>
+		</id>
+		<property name="Code">
+			<column name="code" not-null="true" />
+		</property>
+		<property name="Name">
+			<column name="name" />
+		</property>
+		<property name="Price">
+			<column name="price" />
+		</property>
+		<property name="Category">
+			<column name="category"/>
+		</property>
+	</class>
+	<class name="Order" table="orders" >
+		<id name="Id" column="id">
+			<generator class="guid" />
+		</id>
+		<many-to-one name="Customer" class="Customer" cascade="all">
+			<column name="customer_id" not-null="true"></column>
+		</many-to-one>
+		<!--<set name="Positions" table="positions" inverse="true"></set>-->
+		<bag name="Positions"
+		     inverse="true" 
+		     cascade="all" table="positions">
+			<key column="order_id" />
+			<one-to-many class="Position" />
+		</bag>
+		<property name="OrderDate">
+			<column name="order_date"/>
+		</property>
+		<property name="ShipmentDate">
+			<column name="shipment_date" />
+		</property>
+		<property name="OrderNumber" generated="always">
+			<column name="order_number" />
+		</property>
+		<property name="Status">
+			<column name="status" />
+		</property>
+	</class>
+	<class name="Position" table="positions" >
+		<id name="Id" column="id">
+			<generator class="guid" />
+		</id>
+		<many-to-one name="Order" class="Order" cascade="all">
+			<column name="order_id" not-null="true"></column>
+		</many-to-one>
+		<many-to-one name="Item" class="Item" cascade="all">
+			<column name="item_id" not-null="true"></column>
+		</many-to-one>
+		<property name="ItemsCount">
+			<column name="items_count" />
+		</property>
+		<property name="ItemPrice">
+			<column name="item_price" />
+		</property>
+	</class>
+	<class name="User" table="users" >
+		<id name="Id" column="id">
+			<generator class="guid" />
+		</id>
+		<many-to-one name="Customer" class="Customer" cascade="all">
+			<column name="customer_id"></column>
+		</many-to-one>
+		<property name="Role">
+			<column name="role" />
+		</property>
+		<property name="Username">
+			<column name="username" />
+		</property>
+		<property name="Password">
+			<column name="password" />
+		</property>
+	</class>
+</hibernate-mapping>

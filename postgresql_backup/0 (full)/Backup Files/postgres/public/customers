@@ -1,0 +1,59 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.5
+-- Dumped by pg_dump version 14.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: customers; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.customers (
+    id uuid NOT NULL,
+    name text NOT NULL,
+    code character(9) NOT NULL,
+    address text,
+    discount real
+);
+
+
+ALTER TABLE public.customers OWNER TO postgres;
+
+--
+-- Data for Name: customers; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.customers (id, name, code, address, discount) FROM stdin;
+48616a90-b6b3-4a87-a350-9478a0eca4f9	dex	aaaa-1111	some address	15
+9517b2e5-cc91-4272-8f41-37dbff01c398	dexxx	1409-2022		15
+\.
+
+
+--
+-- Name: customers customers_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.customers
+    ADD CONSTRAINT customers_pk PRIMARY KEY (id);
+
+
+--
+-- PostgreSQL database dump complete
+--
+

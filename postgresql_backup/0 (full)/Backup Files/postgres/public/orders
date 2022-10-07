@@ -1,0 +1,108 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.5
+-- Dumped by pg_dump version 14.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: orders; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.orders (
+    id uuid NOT NULL,
+    order_date date NOT NULL,
+    shipment_date date,
+    customer_id uuid NOT NULL,
+    status text,
+    order_number integer NOT NULL
+);
+
+
+ALTER TABLE public.orders OWNER TO postgres;
+
+--
+-- Name: orders_order_number_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+--
+
+ALTER TABLE public.orders ALTER COLUMN order_number ADD GENERATED ALWAYS AS IDENTITY (
+    SEQUENCE NAME public.orders_order_number_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1
+);
+
+
+--
+-- Data for Name: orders; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.orders (id, order_date, shipment_date, customer_id, status, order_number) FROM stdin;
+5a9f6dda-2b6e-4832-a11d-58f3351c63d4	2021-01-01	2021-02-02	48616a90-b6b3-4a87-a350-9478a0eca4f9	InProgress	1
+18712351-5d5f-4b1d-a081-c6ab755cff5a	2022-09-15	-infinity	9517b2e5-cc91-4272-8f41-37dbff01c398	Canceled	5
+201d3c6d-23b2-429a-9e97-7b6567cef567	2022-09-15	-infinity	9517b2e5-cc91-4272-8f41-37dbff01c398	Canceled	4
+3537c214-ca2d-459b-931e-2bcd14b16464	2022-09-15	-infinity	9517b2e5-cc91-4272-8f41-37dbff01c398	Canceled	3
+7e8e88af-856a-4682-91b8-83a0625e7963	2022-09-16	2022-09-16	9517b2e5-cc91-4272-8f41-37dbff01c398	Complete	9
+80887adc-7407-41c4-972e-ce09b4397b69	2022-09-16	\N	9517b2e5-cc91-4272-8f41-37dbff01c398	Canceled	11
+b0d2a063-faf2-4a62-ac5f-93628428f4b4	2022-09-16	2022-09-16	9517b2e5-cc91-4272-8f41-37dbff01c398	Complete	12
+2b31466e-f65d-42e4-b570-9ed0ebd5bb3e	2022-09-16	2022-09-16	9517b2e5-cc91-4272-8f41-37dbff01c398	Complete	10
+edf3fd07-157a-46c1-bf6c-3c8e5c52389c	2022-09-16	2022-09-16	9517b2e5-cc91-4272-8f41-37dbff01c398	Complete	13
+70847dc4-97a7-490c-8228-ac3409237ac4	2022-09-16	\N	9517b2e5-cc91-4272-8f41-37dbff01c398	New	14
+fc6394fe-1c8d-44b1-8bae-2eb3c98a0205	2022-09-16	2022-09-16	9517b2e5-cc91-4272-8f41-37dbff01c398	Complete	15
+58088d08-7be4-4307-9687-03b05249afc9	2022-09-16	\N	9517b2e5-cc91-4272-8f41-37dbff01c398	New	17
+6d8adaab-6f70-41fd-8679-44901155d648	2022-09-16	2022-09-16	9517b2e5-cc91-4272-8f41-37dbff01c398	In Progress	16
+\.
+
+
+--
+-- Name: orders_order_number_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+--
+
+SELECT pg_catalog.setval('public.orders_order_number_seq', 17, true);
+
+
+--
+-- Name: orders orders_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT orders_pk PRIMARY KEY (id);
+
+
+--
+-- Name: orders fk_4484154d; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT fk_4484154d FOREIGN KEY (customer_id) REFERENCES public.customers(id);
+
+
+--
+-- Name: orders orders_customers_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.orders
+    ADD CONSTRAINT orders_customers_fk FOREIGN KEY (customer_id) REFERENCES public.customers(id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

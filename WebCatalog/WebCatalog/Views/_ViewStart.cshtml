@@ -1,0 +1,16 @@
+﻿@using System.Security.Claims
+@using WebCatalog.Constants
+@{
+    Layout = "_Layout";
+
+    ViewData["isAuthenticated"] = User.Identity!.IsAuthenticated;
+
+    string roleName = "";
+    var roleClaim = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+    if (roleClaim != null)
+    {
+        roleName = roleClaim.Value;
+    }
+    var isManager = roleName == Global.Manager;
+    ViewData["isManager"] = isManager;
+}

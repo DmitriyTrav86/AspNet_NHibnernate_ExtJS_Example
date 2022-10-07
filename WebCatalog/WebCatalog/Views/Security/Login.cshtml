@@ -1,0 +1,26 @@
+﻿@*@model dynamic*@
+
+@{
+    var returnUrl = ViewData["ReturnUrl"] as string;
+    var error = TempData["Error"] as string;
+}
+
+<html>
+<head>
+    <title>Login page</title>
+</head>
+<body>
+<div>
+    @if (!string.IsNullOrEmpty(error))
+    {
+        <h2 class="alert-danger" style="padding: 20px;">@error</h2>
+    }
+    <h1>Login</h1>
+    <form action="/login?ReturnUrl=@System.Net.WebUtility.UrlEncode(returnUrl)" method="post">
+        <input type="text" name="username" placeholder="Username"/>
+        <input type="text" name="password" placeholder="Password"/>
+        <input type="submit" value="login"/>
+    </form>
+</div>
+</body>
+</html>

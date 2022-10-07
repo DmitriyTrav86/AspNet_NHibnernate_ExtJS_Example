@@ -1,0 +1,124 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 14.5
+-- Dumped by pg_dump version 14.2
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+SET default_tablespace = '';
+
+SET default_table_access_method = heap;
+
+--
+-- Name: positions; Type: TABLE; Schema: public; Owner: postgres
+--
+
+CREATE TABLE public.positions (
+    id uuid NOT NULL,
+    item_price real NOT NULL,
+    items_count integer NOT NULL,
+    order_id uuid NOT NULL,
+    item_id uuid NOT NULL
+);
+
+
+ALTER TABLE public.positions OWNER TO postgres;
+
+--
+-- Data for Name: positions; Type: TABLE DATA; Schema: public; Owner: postgres
+--
+
+COPY public.positions (id, item_price, items_count, order_id, item_id) FROM stdin;
+c0add0a3-7905-4ea0-a0e5-f6362b937bd2	900	5	5a9f6dda-2b6e-4832-a11d-58f3351c63d4	9206f3f9-fd81-4788-9352-c594e83eb0c9
+4a50c8a8-94d9-4689-b220-f1dbf9adfb7c	1300	1	3537c214-ca2d-459b-931e-2bcd14b16464	db942a45-0db5-4e49-8edc-9a4dfe1701ab
+69e6b5c4-00a6-4e72-b033-e8b8d1e97c84	400	1	3537c214-ca2d-459b-931e-2bcd14b16464	00108721-9f36-4d8c-9b4c-7cf1e82a96bf
+0132f195-201d-4717-ba91-68fded23a8ce	1500	1	3537c214-ca2d-459b-931e-2bcd14b16464	47349e07-a10b-4404-b27a-4350e156e208
+9acf9b32-2553-4e8d-9d27-bc51fdf66de1	800	1	201d3c6d-23b2-429a-9e97-7b6567cef567	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+254d2304-05aa-40dd-843d-9f78e1405622	1200	1	18712351-5d5f-4b1d-a081-c6ab755cff5a	9206f3f9-fd81-4788-9352-c594e83eb0c9
+415f491f-e39f-4e50-85dc-709763c64ac7	1300	1	18712351-5d5f-4b1d-a081-c6ab755cff5a	db942a45-0db5-4e49-8edc-9a4dfe1701ab
+f66c6c25-5c26-4328-8e1b-7d5f113a743b	400	1	18712351-5d5f-4b1d-a081-c6ab755cff5a	00108721-9f36-4d8c-9b4c-7cf1e82a96bf
+234c2124-0923-48a3-9f92-3176dfdc8774	600	1	7e8e88af-856a-4682-91b8-83a0625e7963	c6006849-ab61-40b6-9060-d09f2d0f3512
+462dc53a-a04a-4a26-80b8-2a493c53c1a3	500	1	7e8e88af-856a-4682-91b8-83a0625e7963	0a72cff3-40e4-4d4a-8f7e-9252ec90767d
+e16f45b6-0cee-4d47-8b6d-7f006bd63714	1500	2	2b31466e-f65d-42e4-b570-9ed0ebd5bb3e	47349e07-a10b-4404-b27a-4350e156e208
+0036335c-338a-4dc8-bd91-3f1958873c77	10000	1	2b31466e-f65d-42e4-b570-9ed0ebd5bb3e	bd8c1a1d-4c49-419f-95fd-35fdcf812a43
+7640a42a-c2bf-49cf-9688-3f2377ef7156	800	1	2b31466e-f65d-42e4-b570-9ed0ebd5bb3e	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+3bbcbe15-6966-4e93-a8dd-a7729b22a00a	800	2	80887adc-7407-41c4-972e-ce09b4397b69	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+a8d89aeb-6fea-47f9-af4e-6260c919ce25	10000	2	80887adc-7407-41c4-972e-ce09b4397b69	bd8c1a1d-4c49-419f-95fd-35fdcf812a43
+e2d87933-4a87-410b-bb81-09bb0a4c9267	1500	1	80887adc-7407-41c4-972e-ce09b4397b69	47349e07-a10b-4404-b27a-4350e156e208
+884c7c32-7815-437b-86a8-21db90212664	600	1	b0d2a063-faf2-4a62-ac5f-93628428f4b4	c6006849-ab61-40b6-9060-d09f2d0f3512
+dcca198d-f011-41f2-8d2c-dc656aa0154e	400	1	b0d2a063-faf2-4a62-ac5f-93628428f4b4	00108721-9f36-4d8c-9b4c-7cf1e82a96bf
+66631b18-8c0a-4843-b07f-513592942377	1300	1	b0d2a063-faf2-4a62-ac5f-93628428f4b4	db942a45-0db5-4e49-8edc-9a4dfe1701ab
+b872f204-722b-4d36-a501-cce13e41c48d	500	1	b0d2a063-faf2-4a62-ac5f-93628428f4b4	0a72cff3-40e4-4d4a-8f7e-9252ec90767d
+c5249353-7d47-4175-9afe-beb1fad0e7ea	800	1	b0d2a063-faf2-4a62-ac5f-93628428f4b4	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+00677f47-29e3-4e0c-8110-66d4b18103bb	1500	2	edf3fd07-157a-46c1-bf6c-3c8e5c52389c	47349e07-a10b-4404-b27a-4350e156e208
+e80d4146-044d-47eb-a1e8-6dfd7122c922	10000	1	edf3fd07-157a-46c1-bf6c-3c8e5c52389c	bd8c1a1d-4c49-419f-95fd-35fdcf812a43
+5516d563-7abe-453f-9da5-e6e4b5146b6a	1200	1	70847dc4-97a7-490c-8228-ac3409237ac4	9206f3f9-fd81-4788-9352-c594e83eb0c9
+bf31f7e4-ca51-41f2-90da-02974bfd911c	600	1	70847dc4-97a7-490c-8228-ac3409237ac4	c6006849-ab61-40b6-9060-d09f2d0f3512
+29922565-2233-490e-acae-5f6a4e09f98a	400	1	70847dc4-97a7-490c-8228-ac3409237ac4	00108721-9f36-4d8c-9b4c-7cf1e82a96bf
+2d1e841b-4f1a-42fa-bfbe-8c6eb4149738	1300	1	fc6394fe-1c8d-44b1-8bae-2eb3c98a0205	db942a45-0db5-4e49-8edc-9a4dfe1701ab
+a9f24f7b-bfed-4c62-be70-8f4ff4ef888c	400	1	fc6394fe-1c8d-44b1-8bae-2eb3c98a0205	00108721-9f36-4d8c-9b4c-7cf1e82a96bf
+d1718a5b-3305-442b-a62c-b644c0f00172	500	1	fc6394fe-1c8d-44b1-8bae-2eb3c98a0205	0a72cff3-40e4-4d4a-8f7e-9252ec90767d
+8c1102ee-96bb-4fa0-9921-73610586df3c	800	1	fc6394fe-1c8d-44b1-8bae-2eb3c98a0205	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+3484857a-7077-45bf-a06a-a5c02eb0c674	10000	1	6d8adaab-6f70-41fd-8679-44901155d648	bd8c1a1d-4c49-419f-95fd-35fdcf812a43
+d9118c96-83e7-47eb-bf94-d5fe87c7fcee	1500	1	6d8adaab-6f70-41fd-8679-44901155d648	47349e07-a10b-4404-b27a-4350e156e208
+f0a4908f-9ea8-4cae-a4a6-04ea7dfa4bf1	800	1	6d8adaab-6f70-41fd-8679-44901155d648	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+1f4f4146-8842-4e78-9c2c-643f24fad31a	2000	1	58088d08-7be4-4307-9687-03b05249afc9	b88ab76f-ed55-4044-92b1-c1d42e94962b
+b6c8d137-1faa-4683-b23f-9ee12166f580	800	1	58088d08-7be4-4307-9687-03b05249afc9	892fa7e9-a14a-48ba-92d1-415c250d3c1a
+\.
+
+
+--
+-- Name: positions positions_pk; Type: CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.positions
+    ADD CONSTRAINT positions_pk PRIMARY KEY (id);
+
+
+--
+-- Name: positions fk_5e9271fa; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.positions
+    ADD CONSTRAINT fk_5e9271fa FOREIGN KEY (item_id) REFERENCES public.items(id);
+
+
+--
+-- Name: positions fk_cf20c45f; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.positions
+    ADD CONSTRAINT fk_cf20c45f FOREIGN KEY (order_id) REFERENCES public.orders(id);
+
+
+--
+-- Name: positions positions_items_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.positions
+    ADD CONSTRAINT positions_items_fk FOREIGN KEY (item_id) REFERENCES public.items(id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- Name: positions positions_orders_fk; Type: FK CONSTRAINT; Schema: public; Owner: postgres
+--
+
+ALTER TABLE ONLY public.positions
+    ADD CONSTRAINT positions_orders_fk FOREIGN KEY (order_id) REFERENCES public.orders(id) ON UPDATE CASCADE ON DELETE CASCADE;
+
+
+--
+-- PostgreSQL database dump complete
+--
+

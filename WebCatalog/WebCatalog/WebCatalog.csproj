@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentNHibernate" Version="3.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="6.0.8" />
+    <PackageReference Include="NHibernate" Version="5.3.13" />
+    <PackageReference Include="NHibernate.Linq" Version="1.0.0" />
+    <PackageReference Include="NHibernate.Mapping.Attributes" Version="5.1.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\extjs\all.css" />
+    <None Include="wwwroot\js\extjs\ext-all-debug.js" />
+    <None Include="wwwroot\js\extjs\ext-all-rtl-debug.js" />
+    <None Include="wwwroot\js\extjs\ext-all-rtl.js" />
+    <None Include="wwwroot\js\extjs\ext-all.js" />
+    <None Include="wwwroot\js\extjs\ext-debug.js" />
+    <None Include="wwwroot\js\extjs\ext-modern-all-debug.js" />
+    <None Include="wwwroot\js\extjs\ext-modern-all.js" />
+    <None Include="wwwroot\js\extjs\ext-modern-debug.js" />
+    <None Include="wwwroot\js\extjs\ext-modern.js" />
+    <None Include="wwwroot\js\extjs\ext.js" />
+  </ItemGroup>
+
+</Project>

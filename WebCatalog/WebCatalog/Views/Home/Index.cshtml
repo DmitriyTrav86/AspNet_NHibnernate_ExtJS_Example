@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @if (ViewData["isManager"] != null && (bool)ViewData["isManager"])
+    {
+        <p>You logged in as administrator. You can edit catalog items here: <a class="" asp-area="" asp-controller="Catalog" asp-action="Catalog">Edit Catalog</a> </p>
+    }
+    else
+    {
+        <p>Please, see our <a class="" asp-area="" asp-controller="Catalog" asp-action="Catalog">Catalog</a>, we have a new goods on a lower prices!</p>
+    }
+</div>

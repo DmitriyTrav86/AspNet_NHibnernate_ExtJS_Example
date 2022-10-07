@@ -1,0 +1,62 @@
+
+@font-face {
+    font-family: 'Font Awesome 5 Free';
+    src: url(../fonts/fa-solid-900.ttf);
+}
+
+html {
+    font-size: 14px;
+
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.background-cover {
+    background-size: cover;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.item-add {
+    background-image: url(../images/pictos/add.png);
+}
+
+/*extjs override*/
+.x-mask-msg-text {
+    background-size: 16px 16px;
+}
+
+.right-nav-item-container {
+    text-align: right;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.right-nav-item {
+    padding: 0.5rem 1rem;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.inline-block {
+    display: inline-block;
+}
